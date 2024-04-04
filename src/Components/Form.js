@@ -1,14 +1,30 @@
-import { render } from '@testing-library/react';
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Form = () => {
+
+  const [firstName, setFirstName] = useState()
+  const [lastName, setLastName] = useState()
+  const [email, setEmail] = useState()
+  const [phone,setPhone] = useState()
+  const [address, setAddress] = useState()
+  const [donation, setDonation] = useState()
+  const [amount, setAmount] = useState()
+
+  const handleSubmit = (eventValue) => {
+    eventValue.preventDefault();
+    axios.post('http://localhost:3001/donation-form', {firstName, lastName, email, phone, address, donation, amount})
+    .then(result => console.log(result))
+    .catch(err => console.log(err))
+  }
+
 
    const [mAmnt ,setMinAmnt] = useState(0)
 
   const minAmnt = (eventMin) => {
     var amnt = eventMin.target.value;
     setMinAmnt(amnt)
+    setAmount(amnt);
 
   }
 
@@ -17,50 +33,46 @@ const Form = () => {
   const handleOnchange = (event) => {
     let value = event.target.value;
     setShowHide(value);
+    setDonation(value);
+    if (value !== "money") {
+      setAmount(0); // Reset the amount state if donation type is not 'money'
+    }
   }
 
-  const handleMinAmount = () => {
+  const handleMinAmount = (event) => {
 
     if (showhide === "money" && mAmnt <= 250) {
       alert("Money less then 250");
+      event.preventDefault(); // This will prevent the form from being submitted
 
+    }
+    else{
+      alert("Form Submited");
     }
 
   }
-
-  //FOR CONSOLING DATA
-
-  // const handleSubmition = (eventValue) => {
-  //   eventValue.preventDefault();
-  
-  //   for(let i=0 ; i < 7 ;i++)
-  //   {
-  //   console.log(eventValue.target[i].value);
-  //   }
-  
-  // }
 
   return (
     <>
       <div className="container">
         <h2>Donation Form</h2>
-        <form id="donationForm" method="post" action="/submit-donation" onSubmit={handleSubmition}>
+        <form id="donationForm" method="post" action="/submit-donation" onSubmit={handleSubmit}>
           <label htmlFor="firstName">First Name:</label>
-          <input type="text" id="name" name="firstName" required />
+          <input type="text" id="name" name="firstName" onChange={(e) => setFirstName(e.target.value)} required />
           <label htmlFor="lastName">Last Name:</label>
-          <input type="text" id="name" name="lastName" required />
+          <input type="text" id="name" name="lastName" onChange={(e) => setLastName(e.target.value)} required />
 
           <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" />
+          <input type="email" id="email" name="email" onChange={(e) => setEmail(e.target.value)}/>
 
           <label htmlFor="phone">Phone:</label>
-          <input type="number" id="phone" name="phone" required />
+          <input type="number" id="phone" name="phone" onChange={(e) => setPhone(e.target.value)} required />
 
           <label htmlFor="address">Address:</label>
-          <input type="text" id="address" name="address" required />
+          <input type="text" id="address" name="address" onChange={(e) => setAddress(e.target.value)} required />
 
           <label htmlFor="items">Select the donation:</label>
-          <select name="donation" id="donation" onChange={handleOnchange} >
+          <select name="donation" id="donation" onChange={handleOnchange}  >
             <option value="Select">Select the Donation</option>
             <option value="books">Books</option>
             <option value="clothes">Clothes</option>
@@ -73,12 +85,12 @@ const Form = () => {
             showhide === "money" && (
               <div className="amount">
                 <label htmlFor="Amount">Amount:</label>
-                <input type="number" id='amount' placeholder='Amount Should be greater Then 250' onChange={minAmnt} />
+                <input type="number" id='amount' name='amount' placeholder='Amount Should be greater Then 250' onChange={minAmnt} />
               </div>
             )
           }
             
-          <button type="submit" id="submitButton" onClick={handleMinAmount}>Proceed to Next Page</button>
+          <button type="submit" id="submitButton" onClick={(event) => handleMinAmount(event)}>Proceed to Next Page</button>
         </form>
         
       </div>
