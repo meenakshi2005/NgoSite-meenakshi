@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { Navigate, redirect, useNavigate } from 'react-router';
-import { log } from 'console';
+import { useNavigate } from 'react-router';
+
 
 const Form = () => {
 
@@ -22,6 +22,7 @@ const Form = () => {
     // .catch(err => console.log(err))
     try {
       let data = await fetch('http://localhost:3001/donation-form', { method: "POST", body: JSON.stringify({ firstName, lastName, email, phone, address, donation, amount }) })
+      console.log(data); 
     }
     catch(error) {
       console.log(error);
@@ -31,7 +32,6 @@ const Form = () => {
 
 
   const [mAmnt, setMinAmnt] = useState(0)
-
   const minAmnt = (eventMin) => {
     var amnt = eventMin.target.value;
     setMinAmnt(amnt)
