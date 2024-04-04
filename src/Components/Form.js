@@ -1,6 +1,5 @@
-import { render } from '@testing-library/react';
+import { Link } from 'react-router-dom'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
 
 const Form = () => {
 
@@ -25,24 +24,28 @@ const Form = () => {
 
   const handleMinAmount = () => {
 
-    if (showhide === "money" && mAmnt <= 250) {
+    if (showhide === "money" && mAmnt <= 250) 
+    {
       alert("Money less then 250");
-
+    }
+    else
+    {
+      alert("Form Submitted Successfully")
     }
 
   }
 
   //FOR CONSOLING DATA
 
-  // const handleSubmition = (eventValue) => {
-  //   eventValue.preventDefault();
+  const handleSubmition = (eventValue) => {
+    eventValue.preventDefault();
   
   //   for(let i=0 ; i < 7 ;i++)
   //   {
   //   console.log(eventValue.target[i].value);
   //   }
   
-  // }
+  }
 
   return (
     <>
@@ -82,7 +85,7 @@ const Form = () => {
             )
           }
             
-          <button type="submit" id="submitButton" onClick={handleMinAmount}>Proceed to Next Page</button>
+          <Link to={"/NextPage"} style={{textDecoration:"none"}}><button type="submit" id="submitButton" onClick={handleMinAmount}>Proceed to Next Page</button></Link>
         </form>
         
       </div>
