@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 const Form = () => {
 
-   const [mAmnt ,setMinAmnt] = useState(0)
+//For checkin minimum amount
+
+  const [mAmnt ,setMinAmnt] = useState(0)
 
   const minAmnt = (eventMin) => {
     var amnt = eventMin.target.value;
@@ -18,6 +20,8 @@ const Form = () => {
     let value = event.target.value;
     setShowHide(value);
   }
+
+  //For checking minimum balance
 
   const handleMinAmount = () => {
 
