@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { Navigate, redirect, useNavigate } from 'react-router';
 
 const Form = () => {
 
@@ -10,6 +11,8 @@ const Form = () => {
   const [address, setAddress] = useState()
   const [donation, setDonation] = useState()
   const [amount, setAmount] = useState()
+
+  const navigate = useNavigate()
 
   const handleSubmit = (eventValue) => {
     eventValue.preventDefault();
@@ -48,6 +51,7 @@ const Form = () => {
     }
     else{
       alert("Form Submited");
+      navigate("/NextPage")
     }
 
   }
