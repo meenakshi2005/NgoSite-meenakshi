@@ -1,28 +1,36 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { Navigate, redirect, useNavigate } from 'react-router';
+import { log } from 'console';
 
 const Form = () => {
 
   const [firstName, setFirstName] = useState()
   const [lastName, setLastName] = useState()
   const [email, setEmail] = useState()
-  const [phone,setPhone] = useState()
+  const [phone, setPhone] = useState()
   const [address, setAddress] = useState()
   const [donation, setDonation] = useState()
   const [amount, setAmount] = useState()
 
   const navigate = useNavigate()
 
-  const handleSubmit = (eventValue) => {
+  const handleSubmit = async (eventValue) => {
     eventValue.preventDefault();
-    axios.post('http://localhost:3001/donation-form', {firstName, lastName, email, phone, address, donation, amount})
-    .then(result => console.log(result))
-    .catch(err => console.log(err))
+    // axios.post('http://localhost:3001/donation-form', {firstName, lastName, email, phone, address, donation, amount})
+    // .then(result => console.log(result))
+    // .catch(err => console.log(err))
+    try {
+      let data = await fetch('http://localhost:3001/donation-form', { method: "POST", body: JSON.stringify({ firstName, lastName, email, phone, address, donation, amount }) })
+    }
+    catch(error) {
+      console.log(error);
+    }
+
   }
 
 
-   const [mAmnt ,setMinAmnt] = useState(0)
+  const [mAmnt, setMinAmnt] = useState(0)
 
   const minAmnt = (eventMin) => {
     var amnt = eventMin.target.value;
@@ -49,7 +57,7 @@ const Form = () => {
       event.preventDefault(); // This will prevent the form from being submitted
 
     }
-    else{
+    else {
       alert("Form Submited");
       navigate("/NextPage")
     }
@@ -67,7 +75,7 @@ const Form = () => {
           <input type="text" id="name" name="lastName" onChange={(e) => setLastName(e.target.value)} required />
 
           <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" onChange={(e) => setEmail(e.target.value)}/>
+          <input type="email" id="email" name="email" onChange={(e) => setEmail(e.target.value)} />
 
           <label htmlFor="phone">Phone:</label>
           <input type="number" id="phone" name="phone" onChange={(e) => setPhone(e.target.value)} required />
@@ -93,10 +101,10 @@ const Form = () => {
               </div>
             )
           }
-            
+
           <button type="submit" id="submitButton" onClick={(event) => handleMinAmount(event)}>Proceed to Next Page</button>
         </form>
-        
+
       </div>
     </>
   )
