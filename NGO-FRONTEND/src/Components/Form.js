@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router';
+// import { useNavigate } from 'react-router';
 
 
 const Form = () => {
@@ -13,21 +13,34 @@ const Form = () => {
   const [donation, setDonation] = useState()
   const [amount, setAmount] = useState()
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate();
+  // const navigateToPage = useNavigate();
 
   const handleSubmit = async (eventValue) => {
     eventValue.preventDefault();
-    // axios.post('http://localhost:3001/donation-form', {firstName, lastName, email, phone, address, donation, amount})
-    // .then(result => console.log(result))
-    // .catch(err => console.log(err))
-    try {
-      let data = await fetch('http://localhost:3001/donation-form', { method: "POST", body: JSON.stringify({ firstName, lastName, email, phone, address, donation, amount }) })
-      console.log(data); 
-    }
-    catch(error) {
-      console.log(error);
-    }
+    axios.post('http://localhost:3001/donation-form', { firstName, lastName, email, phone, address, donation, amount })
+      .then(result => console.log(result))
+      .catch(err => console.log(err))
+    // try {
+    //   let data = await fetch('http://127.0.0.1:3001/donation-form', { method: "POST", body: JSON.stringify({ firstName, lastName, email, phone, address, donation, amount }) })
+    //   console.log(data); 
+    // }
+    // catch(error) {
+    //   console.log(error);
+    // }
+  }
+  const [showChoice, setShowChoice] = useState("")
 
+  const handleOnChoice = (event) => {
+    let ch = event.target.value;
+    if (ch === "pickup") {
+      setShowChoice(ch);
+      alert("Quantity Should Be More Then 15")
+      console.log(ch);
+    }
+    // else if (ch === "courier") {
+    //   setShowChoice(ch)
+    // }
   }
 
 
@@ -40,6 +53,8 @@ const Form = () => {
   }
 
   const [showhide, setShowHide] = useState("")
+
+  
 
   const handleOnchange = (event) => {
     let value = event.target.value;
@@ -57,10 +72,19 @@ const Form = () => {
       event.preventDefault(); // This will prevent the form from being submitted
 
     }
-    else {
-      alert("Form Submited");
-      navigate("/NextPage")
-    }
+
+    else
+      if (showhide === "money" && mAmnt > 250) {
+        alert("Proceeding To NextPage")
+        // navigate("/NextPage")
+      }
+      else
+        if (showhide === "shoes" || showhide === "clothes" || showhide === "books") {
+          alert("Proceeding To NextPage");
+          // navigateToPage("/NextPageCP")
+        }
+
+
 
   }
 
@@ -101,6 +125,27 @@ const Form = () => {
               </div>
             )
           }
+
+          {
+            (showhide === "books" || showhide === "clothes" || showhide === "shoes") &&
+            (
+              <>
+                <label htmlFor="choice">Make a choice:</label>
+                <input type="radio" name="choice" id="pickup" onChange={handleOnChoice} />Pickup
+                <input type="radio" name="choice" id="courier" />Courier
+                {
+                  showChoice === "pickup" && (
+                    <>
+                      <label htmlFor="quantity">Quantity:</label>
+                      <input type="number" id='quantity' name='quantity' placeholder='Quantity Should be more then 15'/>
+                    </>
+                  )
+                }
+                
+              </>
+            )
+          }
+
 
           <button type="submit" id="submitButton" onClick={(event) => handleMinAmount(event)}>Proceed to Next Page</button>
         </form>
