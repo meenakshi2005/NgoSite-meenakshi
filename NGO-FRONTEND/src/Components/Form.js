@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-// import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 
 
 const Form = () => {
@@ -13,7 +13,7 @@ const Form = () => {
   const [donation, setDonation] = useState()
   const [amount, setAmount] = useState()
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const navigateToPage = useNavigate();
 
   const handleSubmit = async (eventValue) => {
@@ -29,18 +29,32 @@ const Form = () => {
     //   console.log(error);
     // }
   }
-  const [showChoice, setShowChoice] = useState("")
 
-  const handleOnChoice = (event) => {
-    let ch = event.target.value;
-    if (ch === "pickup") {
-      setShowChoice(ch);
-      alert("Quantity Should Be More Then 15")
-      console.log(ch);
-    }
-    // else if (ch === "courier") {
-    //   setShowChoice(ch)
-    // }
+  //For quantity
+  const [quantity,setQuantity] = useState(0)
+  const minQuantity = (event) => {
+    let q=event.target.value;
+    setQuantity(q);
+    
+  }
+
+  const handleQuantity = (event) => {
+    if( quantity < 15 ){
+        alert("Quantity Should be more then 15")
+        event.preventDefault();
+      }
+      else
+      {
+        alert("Proceeding to Next Page")
+        navigate("/NextPage")
+      }
+  }
+
+  
+  //For making choices in books ,clothes , shoes(pickup or courier)
+  const [showChoice, setShowChoice] = useState("")
+  const handleChoice = (e) => {
+      setShowChoice(e.target.value)
   }
 
 
@@ -73,13 +87,11 @@ const Form = () => {
 
     }
 
-    else
-      if (showhide === "money" && mAmnt > 250) {
+    else if (showhide === "money" && mAmnt > 250) {
         alert("Proceeding To NextPage")
         // navigate("/NextPage")
       }
-      else
-        if (showhide === "shoes" || showhide === "clothes" || showhide === "books") {
+    else if (showhide === "shoes" || showhide === "clothes" || showhide === "books") {
           alert("Proceeding To NextPage");
           // navigateToPage("/NextPageCP")
         }
@@ -122,6 +134,7 @@ const Form = () => {
               <div className="amount">
                 <label htmlFor="Amount">Amount:</label>
                 <input type="number" id='amount' name='amount' placeholder='Amount Should be greater Then 250' onChange={minAmnt} />
+                <button type="submit" id="submitButton" onClick={(event) => handleMinAmount(event)}>Proceed to Payment</button>
               </div>
             )
           }
@@ -130,24 +143,32 @@ const Form = () => {
             (showhide === "books" || showhide === "clothes" || showhide === "shoes") &&
             (
               <>
-                <label htmlFor="choice">Make a choice:</label>
-                <input type="radio" name="choice" id="pickup" onChange={handleOnChoice} />Pickup
-                <input type="radio" name="choice" id="courier" />Courier
+                <label htmlFor="choice">Make a choice:</label><br /><br />
+                <input type="radio" name="choice" value="pickup" onChange={handleChoice}/>Pickup &nbsp; &nbsp; &nbsp; 
+                <input type="radio" name="choice" value="courier" onChange={handleChoice} />Courier <br />
                 {
-                  showChoice === "pickup" && (
-                    <>
-                      <label htmlFor="quantity">Quantity:</label>
-                      <input type="number" id='quantity' name='quantity' placeholder='Quantity Should be more then 15'/>
-                    </>
-                  )
+                    showChoice==="pickup" && (
+                      <>
+                        <label htmlFor="qunatity">Quantity:</label><br />
+                        <input type="number" name='pickup' id="pickup" placeholder='Number should be more then 15' onChange={minQuantity} />
+                        <button type="submit" id="submitButton" onClick={handleQuantity}>Proceed to Next Page</button>
+                        
+                      </>
+                    )
                 }
-                
+                {
+                    showChoice==="courier" && (
+                      <>
+                        <button type="submit" id="submitButton" >Proceed to Next Page</button>
+                      </>
+                    )
+                }
               </>
             )
           }
 
 
-          <button type="submit" id="submitButton" onClick={(event) => handleMinAmount(event)}>Proceed to Next Page</button>
+          {/* <button type="submit" id="submitButton" onClick={(event) => handleMinAmount(event)}>Proceed to Next Page</button> */}
         </form>
 
       </div>

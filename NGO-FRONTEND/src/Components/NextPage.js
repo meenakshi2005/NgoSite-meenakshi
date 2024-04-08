@@ -7,10 +7,6 @@ const NextPage = () => {
                 <label htmlFor="Check the Box If You want to volunteer"></label>
                 <input type="checkbox" name="volunteer" id="volunteer" />Volunteer
             </div>
-            <div className="choice">
-                 <input type="radio" name="courier" id="courier" />Courier
-                 <input type="radio" name="pickup" id="pickup" />Pickup       
-            </div>
         </>
     )
 }
