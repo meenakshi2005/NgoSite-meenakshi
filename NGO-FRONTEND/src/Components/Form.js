@@ -159,7 +159,7 @@ const Form = () => {
                 {
                     showChoice==="courier" && (
                       <>
-                        <button type="submit" id="submitButton" >Proceed to Next Page</button>
+                        <button type="submit" id="submitButton">Proceed to Next Page</button>
                       </>
                     )
                 }
