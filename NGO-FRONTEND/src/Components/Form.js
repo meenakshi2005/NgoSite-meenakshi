@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios';
+// import axios from 'axios';
 import { useNavigate } from 'react-router';
 
 
@@ -18,16 +18,16 @@ const Form = () => {
 
   const handleSubmit = async (eventValue) => {
     eventValue.preventDefault();
-    axios.post('http://localhost:3001/donation-form', { firstName, lastName, email, phone, address, donation, amount })
-      .then(result => console.log(result))
-      .catch(err => console.log(err))
-    // try {
-    //   let data = await fetch('http://127.0.0.1:3001/donation-form', { method: "POST", body: JSON.stringify({ firstName, lastName, email, phone, address, donation, amount }) })
-    //   console.log(data); 
-    // }
-    // catch(error) {
-    //   console.log(error);
-    // }
+    // axios.post('http://localhost:3001/donation-form', { firstName, lastName, email, phone, address, donation, amount })
+    //   .then(result => console.log(result))
+    //   .catch(err => console.log(err))
+    try {
+      let data = await fetch('http://127.0.0.1:3001/donation-form', { method: "POST",headers:{"Content-Type": "application/json"}, body: JSON.stringify({ firstName, lastName, email, phone, address, donation, amount }) })
+      console.log(data); 
+    }
+    catch(error) {
+      console.log(error);
+    }
   }
 
   //For quantity
