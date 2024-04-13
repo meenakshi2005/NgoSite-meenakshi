@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import Home from "./Components/Home";
+import Home from "./Components/Home/Home"
 import ErrorPage from "./error-page";
 import Form from "./Components/Form";
 // import App from "./App";
@@ -13,6 +13,8 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Donate from "./Components/Donate";
 import NextPage from "./Components/NextPage";
+import '@fortawesome/fontawesome-free/css/all.css';
+import Footer from "./Components/Footer/Footer";
 
 
 const router = createBrowserRouter([
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
   {
     path:"/Nextpage",
     element:<NextPage />
+  },
+  {
+    path:"/Footer",
+    element:<Footer />
   }
 
 
