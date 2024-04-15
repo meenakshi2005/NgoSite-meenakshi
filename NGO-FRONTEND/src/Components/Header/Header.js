@@ -24,7 +24,7 @@ const Header = () => {
       <div className="line" style={{ border: "1px solid grey"}}></div>
       <div className="header-2">
         <div className="header-2-1">
-          <img src="logo" alt="logo" />
+          <img src="./images/logo.png" alt="logo" height={55}/>
           <div className="header-2-2">
             <Button props={"Home"} fnt={"#686968"} link={"/"} />
             <Button props={"About Us"} fnt={"#686968"} link={"/About"} />
