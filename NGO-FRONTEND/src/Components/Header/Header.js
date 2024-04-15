@@ -29,7 +29,7 @@ const Header = () => {
             <Button props={"Home"} fnt={"#686968"} link={"/"} />
             <Button props={"About Us"} fnt={"#686968"} link={"/About"} />
             <Button props={"Services"} fnt={"#686968"} link={"/Services"} />
-            <Button props={"Footer"} fnt={"#686968"} link={"/Footer"} />
+            <Button props={"Gallery"} fnt={"#686968"} link={"/Gallery"} />
             <Button props={"Blog"} fnt={"#686968"} link={"/Blog"} />
             <Button props={"Contact Us"} fnt={"#686968"} link={"/Contact"} />
           </div>

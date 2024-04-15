@@ -1,5 +1,11 @@
 
-
+.header{
+    overflow: hidden;
+    background-color: whitesmoke;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
 .header-1 {
     display: flex;
