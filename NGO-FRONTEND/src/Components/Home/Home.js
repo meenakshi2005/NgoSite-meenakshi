@@ -15,7 +15,7 @@ const Home = () => {
                 <div className="main_content">
                     <h2>“Giving is not just about making a donation. It is about making a difference.”
                         <br />
-                        <span>Give a helping hand to children who NEED it!</span>
+    
                     </h2>
 
                     <div className="btn">

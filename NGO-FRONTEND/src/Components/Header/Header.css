@@ -5,6 +5,8 @@
     position: fixed;
     top: 0;
     width: 100%;
+    background-color: black;
+    position: fixed;
 }
 
 .header-1 {
@@ -14,7 +16,6 @@
     margin: 2px 2px;
     padding: 4px 8px;
     color:#999796;
-    
 }
 
 .header-1-2
