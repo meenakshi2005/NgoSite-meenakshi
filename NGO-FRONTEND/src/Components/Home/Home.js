@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import ItemProp from './ItemProp'
-import "./Home.css"
 
 const Home = () => {
     return (
@@ -12,7 +11,7 @@ const Home = () => {
             <Header />
 
             {/* ------------------------------FORM---------------------------- */}
-            <div className="main center">
+            <div className="main">
                 <div className="main_content">
                     <h2>“Giving is not just about making a donation. It is about making a difference.”
                         <br />
@@ -97,35 +96,34 @@ const Home = () => {
                 </div>
                 <div className="product_container">
 
-                    <ItemProp
-                        img={"images/pro1.svg"}
-                        text={"Food"}
-                        para={"We supply needy childen with basic necessities like pure food"}
+                    <CardProp
+                        data={"images/pro1.svg"}
+                        title={"Food"}
+                        text={"We supply needy childen with basic necessities like pure food"}
                     />
 
-                    <ItemProp
-                        img={"images/pro3.svg"}
-                        text={"Books"}
-                        para={"We provide education facilities to children all over the world"}
+                    <CardProp
+                        data={"images/pro3.svg"}
+                        title={"Books"}
+                        text={"We provide education facilities to children all over the world"}
                     />
-                    <ItemProp
-                        img={"images/pro2.svg"}
-                        text={"Clothes"}
-                        para={"We supply needy childen with basic necessities."}
-                    />
-
-                    <ItemProp
-                        img={"images/pro2.svg"}
-                        text={"Shoes"}
-                        para={"We provide facilities to children all over the world"}
+                    <CardProp
+                        data={"images/pro2.svg"}
+                        title={"Clothes"}
+                        text={"We supply needy childen with basic necessities."}
                     />
 
-                    <ItemProp
-                        img={"images/pro2.svg"}
-                        text={"Essential"}
-                        para={"We provide facilities to children all over the world"}
+                    <CardProp
+                        data={"images/pro2.svg"}
+                        title={"Shoes"}
+                        text={"We provide facilities to children all over the world"}
                     />
 
+                    <CardProp
+                        data={"images/pro2.svg"}
+                        title={"Essential"}
+                        text={"We provide facilities to children all over the world"}
+                    />
                 </div>
             </div>
             <hr />
