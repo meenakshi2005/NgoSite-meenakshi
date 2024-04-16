@@ -13,7 +13,8 @@
     background-attachment: fixed;
     height: 130vh;
     max-width: 80%;
-    margin: 0 auto ;
+    padding: 1rem 0;
+    margin: 1rem auto 
 }
 
 .main .main_content {
@@ -73,6 +74,7 @@
     text-align: center;
     color: white;
     font-family: 'Trebuchet MS', sans-serif;
+    margin-bottom: 1rem;
 }
 
 .side .left {
@@ -83,6 +85,7 @@
 .side .left img {
     float: left;
     width: 100%;
+    border: 2rem solid black;
 }
 
 .side .right {
@@ -132,13 +135,8 @@
 
 /* OUR MISSION AND VISION */
 
-.mission-vision {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    margin: 2rem;
-    gap: 3rem;
-    align-items: center;
+.mission-vision{
+    margin-bottom: 1rem;
 }
 
 .mission,
@@ -146,6 +144,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .mission-1,
@@ -172,6 +171,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1;
+    overflow-x: hidden;
+    z-index: 0.5;
 
 }
 
