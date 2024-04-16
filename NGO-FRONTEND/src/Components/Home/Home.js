@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import ItemProp from './ItemProp'
+import "./Home.css"
 
 const Home = () => {
     return (
@@ -11,7 +12,7 @@ const Home = () => {
             <Header />
 
             {/* ------------------------------FORM---------------------------- */}
-            <div className="main">
+            <div className="main center">
                 <div className="main_content">
                     <h2>“Giving is not just about making a donation. It is about making a difference.”
                         <br />
@@ -25,7 +26,7 @@ const Home = () => {
             </div>
 
             {/* --------------------------JOINING AND HELPING------------------------------ */}
-            <div className="side">
+            <div className="side center">
                 <div className="left">
                     <img src="./images/donation.jpg" height={500} />
                 </div>
@@ -44,7 +45,7 @@ const Home = () => {
             {/* -----------------------------------OUR MISSION AND VISION--------------------------------- */}
 
 
-            <div className="mission-vision">
+            <div className="mission-vision center">
                 <div className="mission">
                     <div className="mission-1">
                         <h1>Our Mission</h1>
@@ -90,7 +91,7 @@ const Home = () => {
 
 
             {/* --------------------------------HOW WE HELP------------------------------ */}
-            <div className="product">
+            <div className="product center">
                 <div className="top">
                     <h1>HOW WE HELP</h1>
                 </div>
