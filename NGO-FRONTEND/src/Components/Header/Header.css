@@ -1,5 +1,10 @@
 
 .header{
+    overflow: hidden;
+    background-color: #2E2E2E;
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: black;
     position: fixed;
 }
