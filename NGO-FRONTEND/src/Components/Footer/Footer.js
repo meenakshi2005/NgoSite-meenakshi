@@ -6,7 +6,7 @@ import LinkProp from './LinkProps'
 const Footer = () => {
     return (
         <>
-            <div className="footer">
+            <div className="footer center">
                 <div className="footer-1">
                     <div className="row-1">
                         <div className="col-1">

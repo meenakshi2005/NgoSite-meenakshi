@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Home.css"
 
 const ItemProp = ({img,text,para}) => {
     return (
