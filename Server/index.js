@@ -42,10 +42,14 @@ mongoose.connect(db).then(() => {
 });
 
 
-// mongoose.connect("mongodb://127.0.0.1:27017/NGO_Site_2");
+// mongoose.connect("mongodb://127.0.0.1:27017/NGO_Site_2").then(() => {
+//     console.log('Connected to DB ..... :)');
+// }).catch((err) => {
+//     console.log(err, 'Not Connected to DB ...... :(');
+// });
 
 app.post('/donation-form', (req, res) => {
-    // console.log(req.body);
+    //console.log(req.body);
     DonateModel.create(req.body)
     .then(employees => res.json(employees))
     .catch(err => res.json(err))
