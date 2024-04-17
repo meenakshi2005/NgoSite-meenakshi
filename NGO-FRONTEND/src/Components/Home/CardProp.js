@@ -3,14 +3,17 @@ import Card from 'react-bootstrap/Card';
 
 function CardProp({data,title,text}) {
   return (
-    <Card style={{ width: '18rem' }} data-bs-theme="dark" >
-      <Card.Img variant="top" src={data} />
+    <Card style={{ width: '16rem' , backgroundColor:"#f0f0f0" }} >
+      {/* <Card.Img variant="top" src={data} /> */}
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>
+        <Card.Title style={{textAlign:"center" ,
+                            fontFamily:"'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" ,
+                            color:"#686968" 
+                            }}>{title}</Card.Title>
+        <Card.Text style={{fontSize:"1rem"}}>
           {text}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        {/* <Button variant="primary">Go somewhere</Button> */}
       </Card.Body>
     </Card>
   );

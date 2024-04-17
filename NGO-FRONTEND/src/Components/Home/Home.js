@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import ItemProp from './ItemProp'
 import CardProp from './CardProp'
+import "./Home.css"
 
 const Home = () => {
     return (
@@ -60,15 +60,15 @@ const Home = () => {
                             inequality, and injustice, striving
                             towards a world where every individual
                             has the opportunity to thrive
-                            with dignity and equality</p>
+                            with dignity and equality.</p>
                     </div>
                     <div className="mission-2">
-                        <img src="./images/mission.jpg" height={450} alt="mission" />
+                        <img src="./images/mission.jpg" height={400} alt="mission" style={{marginLeft:"0.5rem"}} />
                     </div>
                 </div>
                 <div className="vision">
                     <div className="vision-1">
-                        <img src="./images/vision.jpg" alt="vision" height={450} />
+                        <img src="./images/vision.jpg" alt="vision" height={400} style={{marginRight:"0.5rem"}} />
 
                     </div>
                     <div className="vision-2">
@@ -98,33 +98,28 @@ const Home = () => {
                 <div className="product_container">
 
                     <CardProp
-                        data={"images/pro1.svg"}
-                        title={"Food"}
-                        text={"We supply needy childen with basic necessities like pure food"}
+                        data={"images/paise.png"}
+                        title={"Money"}
+                        text={"We supply needy childen with basic necessities like pure food."}
                     />
 
                     <CardProp
-                        data={"images/pro3.svg"}
+                        data={"images/books.png"}
                         title={"Books"}
-                        text={"We provide education facilities to children all over the world"}
+                        text={"We provide education facilities to children all over the world."}
                     />
                     <CardProp
-                        data={"images/pro2.svg"}
+                        data={"images/clothes.png"}
                         title={"Clothes"}
                         text={"We supply needy childen with basic necessities."}
                     />
 
-                    <CardProp 
-                        data={"images/pro2.svg"}
+                    <CardProp
+                        data={"images/shoes.png"}
                         title={"Shoes"}
-                        text={"We provide facilities to children all over the world"}
+                        text={"We provide facilities to children all over the world."}
                     />
 
-                    <CardProp
-                        data={"images/pro2.svg"}
-                        title={"Essential"}
-                        text={"We provide facilities to children all over the world"}
-                    />
                 </div>
             </div>
             <hr />
