@@ -12,12 +12,9 @@ const Home = () => {
             <Header />
 
             {/* ------------------------------FORM---------------------------- */}
-            <div className="main">
+            <div className="main center">
                 <div className="main_content">
-                    <h2>“Giving is not just about making a donation. It is about making a difference.”
-                        <br />
-    
-                    </h2>
+                    <h2>“Giving is not just about making a donation. It is about making a difference.”</h2>
 
                     <div className="btn">
                         <Link to={'/Form'}>Donate Now</Link>

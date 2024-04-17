@@ -6,6 +6,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-family: Arial, sans-serif;
     margin: 0;
+    /* background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 
 code {

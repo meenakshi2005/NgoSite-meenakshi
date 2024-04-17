@@ -7,13 +7,13 @@
 .header{
     overflow: hidden;
     background-color: #f0f0f0;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     height: fit-content;
-    position: fixed;
     box-shadow:0 0 20px 0 black;
     z-index: 1;
+    margin-bottom: 2rem;
 }
 
 /* .header-1 {
