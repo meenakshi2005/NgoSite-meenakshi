@@ -2,12 +2,7 @@ const mongoose = require('mongoose')
 
 const donateSchema = new mongoose.Schema({
 
-    firstName: {
-        type: String,
-        required: true
-    },
-
-    lastName: {
+    name: {
         type: String,
         required: true
     },
@@ -32,6 +27,14 @@ const donateSchema = new mongoose.Schema({
     },
 
     amount: {
+        type: String
+    },
+
+    choice: {
+        type: String
+    },
+
+    pickup: {
         type: String
     }
 

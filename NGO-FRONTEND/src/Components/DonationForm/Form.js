@@ -1,28 +1,33 @@
 import React, { useState } from 'react'
-// import axios from 'axios';
-import { useNavigate } from 'react-router';
+import axios from 'axios';
+//import { useNavigate } from 'react-router';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import './Form.css'
 
 
 const Form = () => {
 
-  const [firstName, setFirstName] = useState()
-  const [lastName, setLastName] = useState()
+  const [name, setFirstName] = useState()
+  // const [lastName, setLastName] = useState()
   const [email, setEmail] = useState()
   const [phone, setPhone] = useState()
   const [address, setAddress] = useState()
   const [donation, setDonation] = useState()
   const [amount, setAmount] = useState()
+  const [choice, setUserChoice] = useState()
+  const [pickup, setPickupChoice] = useState()
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   // const navigateToPage = useNavigate();
 
   const handleSubmit = async (eventValue) => {
-    eventValue.preventDefault();
-    // axios.post('http://localhost:3001/donation-form', { firstName, lastName, email, phone, address, donation, amount })
+    // eventValue.preventDefault();
+    // axios.post('http://localhost:3001/donation-form', { name, email, phone, address, donation, amount, choice, pickup })
     //   .then(result => console.log(result))
     //   .catch(err => console.log(err))
     try {
-      let data = await fetch('http://127.0.0.1:3001/donation-form', { method: "POST",headers:{"Content-Type": "application/json"}, body: JSON.stringify({ firstName, lastName, email, phone, address, donation, amount }) })
+      let data = await fetch('http://127.0.0.1:3001/donation-form', { method: "POST",headers:{"Content-Type": "application/json"}, body: JSON.stringify({ name, email, phone, address, donation, amount, choice, pickup }) })
       console.log(data); 
     }
     catch(error) {
@@ -32,10 +37,9 @@ const Form = () => {
 
   //For quantity
   const [quantity,setQuantity] = useState(0)
-  const minQuantity = (event) => {
-    let q=event.target.value;
-    setQuantity(q);
-    
+  const minQuantity = (e) => {
+    setQuantity(e.target.value);
+    setPickupChoice(e.target.value);
   }
 
   const handleQuantity = (event) => {
@@ -45,8 +49,8 @@ const Form = () => {
       }
       else
       {
-        alert("Proceeding to Next Page")
-        navigate("/NextPage")
+        alert("Form Submited")
+        // navigate("/NextPage")
       }
   }
 
@@ -55,6 +59,7 @@ const Form = () => {
   const [showChoice, setShowChoice] = useState("")
   const handleChoice = (e) => {
       setShowChoice(e.target.value)
+      setUserChoice(e.target.value)
   }
 
 
@@ -87,14 +92,14 @@ const Form = () => {
 
     }
 
-    else if (showhide === "money" && mAmnt > 250) {
-        alert("Proceeding To NextPage")
+    // else if (showhide === "money" && mAmnt > 250) {
+    //     alert("Proceeding to NextPage");
         // navigate("/NextPage")
-      }
-    else if (showhide === "shoes" || showhide === "clothes" || showhide === "books") {
-          alert("Proceeding To NextPage");
+      //}
+    //else if (showhide === "shoes" || showhide === "clothes" || showhide === "books") {
+          //alert("Proceeding To NextPage");
           // navigateToPage("/NextPageCP")
-        }
+        //}
 
 
 
@@ -102,13 +107,14 @@ const Form = () => {
 
   return (
     <>
+    <Header />
       <div className="container">
         <h2>Donation Form</h2>
-        <form id="donationForm" method="post" action="/submit-donation" onSubmit={handleSubmit}>
-          <label htmlFor="firstName">First Name:</label>
-          <input type="text" id="name" name="firstName" onChange={(e) => setFirstName(e.target.value)} required />
-          <label htmlFor="lastName">Last Name:</label>
-          <input type="text" id="name" name="lastName" onChange={(e) => setLastName(e.target.value)} required />
+        <form id="donationForm" onSubmit={handleSubmit}>
+          <label htmlFor="Name">Name:</label>
+          <input type="text" id="name" name="name" onChange={(e) => setFirstName(e.target.value)} required />
+          {/* <label htmlFor="lastName">Last Name:</label>
+          <input type="text" id="name" name="lastName" onChange={(e) => setLastName(e.target.value)} required /> */}
 
           <label htmlFor="email">Email:</label>
           <input type="email" id="email" name="email" onChange={(e) => setEmail(e.target.value)} />
@@ -173,6 +179,7 @@ const Form = () => {
         </form>
 
       </div>
+          <Footer />
     </>
   )
 }
