@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import ItemProp from './ItemProp'
+import CardProp from './CardProp'
 
 const Home = () => {
     return (
@@ -113,7 +114,7 @@ const Home = () => {
                         text={"We supply needy childen with basic necessities."}
                     />
 
-                    <CardProp
+                    <CardProp 
                         data={"images/pro2.svg"}
                         title={"Shoes"}
                         text={"We provide facilities to children all over the world"}
