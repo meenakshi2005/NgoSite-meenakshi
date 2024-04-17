@@ -11,13 +11,14 @@ const Footer = () => {
                     <div className="row-1">
                         <div className="col-1">
                             <h3>About Us</h3>
-                            <p>Doante To NGO cares for needy children <br />
-                                by empowering their caregivers to do <br />
-                                their best work, with compassion, grace, <br />
-                                integrity and excellence. Our end goal is <br />
-                                to support children worldwide and <br />
-                                see every child reach the potential <br />
-                                that God has for them.</p>
+                            <p>Doante To NGO cares for needy children
+                                by empowering their caregivers to do 
+                                their best work, with compassion, grace, 
+                                integrity and excellence. Our end goal is 
+                                to support children worldwide and 
+                                see every child reach the potential 
+                                that God has for them.
+                                </p>
                         </div>
                         <div className="col-2">
                             <h3>Links</h3>

@@ -6,6 +6,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-family: Arial, sans-serif;
     margin: 0;
+    /* background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 
 code {
@@ -40,7 +42,7 @@ select {
     box-sizing: border-box;
 }
 
-.container>button {
+.container > button {
     background-color: #21e427;
     color: white;
     padding: 10px 20px;
@@ -51,21 +53,6 @@ select {
     margin: auto;
 
 }
-
-button:hover {
-    background-color: #5d835f;
-}
-
-button:hover {
-    background-color: #3e8e41
-}
-
-button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-}
-
 
 
 
