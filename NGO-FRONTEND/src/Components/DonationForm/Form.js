@@ -27,7 +27,7 @@ const Form = () => {
     }
     catch(error) {
       console.log(error);
-    }
+    } 
   }
 
   //For quantity
@@ -156,6 +156,7 @@ const Form = () => {
                       </>
                     )
                 }
+                
                 {
                     showChoice==="courier" && (
                       <>

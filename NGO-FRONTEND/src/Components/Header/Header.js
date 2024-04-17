@@ -28,10 +28,10 @@ const Header = () => {
             <img src="./images/logo.png" alt="logo" height={55} />
             <div className="header-2-2">
               <Button props={"Home"} fnt={"#686968"} link={"/"} />
-              {/* <Button props={"About Us"} fnt={"#686968"} link={"/About"} /> */}
               <Button props={"Services"} fnt={"#686968"} link={"/Services"} />
               <Button props={"Gallery"} fnt={"#686968"} link={"/Gallery"} />
               <Button props={"Blog"} fnt={"#686968"} link={"/Blog"} />
+              <Button props={"About Us"} fnt={"#686968"} link={"/About"} />
               <Link to={"/Form"}><button id='donate'>Donate</button></Link>
             </div>
           </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import Button from '../Header/Button'
 import "./Footer.css"
 import LinkProp from './LinkProps'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -48,7 +49,7 @@ const Footer = () => {
                             <LinkProp link={"/Contact"} props={"Contact"} />
                         </div>
                         <div className="r-2-c-2">
-                            <Button props={"Donate Now"} clr={"#28cc66"} link={"/Form"} style />
+                            <Link to={"/Form"}><button id='donate'>Donate</button></Link>
                         </div>
                     </div>
                 </div>
