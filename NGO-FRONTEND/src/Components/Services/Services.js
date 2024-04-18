@@ -10,7 +10,6 @@ function Services() {
     <>
       <Header />
     {/* <section className="events"> */}
-        
       <div
         className="page-nav no-margin row"
         style={{
