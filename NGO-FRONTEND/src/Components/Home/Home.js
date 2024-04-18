@@ -23,32 +23,35 @@ const Home = () => {
             </div>
 
             {/* --------------------------JOINING AND HELPING------------------------------ */}
-            <div className="side center">
-                <div className="left">
-                    <img src="./images/donation.jpg" height={500} />
-                </div>
-                <div className="right">
-                    <h2>HELP A CHILD TODAY</h2>
-                    <p>
-                        Service to man is service to God. Donate To NGO cares for needy children by empowering their caregivers to do their best work, with compassion, grace, integrity and excellence. Our end goal is to support children worldwide and see every child reach the potential that God has for them.
-                    </p>
-                    <div className="side_btn">
-                        <a href="/donate">JOIN US TODAY</a>
+
+            <div className="r-2 center">
+                <div className="side">
+                    <div className="left">
+                        <img src="./images/donation.jpg" height={500} />
                     </div>
+                    <div className="right">
+                        <h2>HELP A CHILD TODAY</h2>
+                        <p>
+                            Service to man is service to God. Donate To NGO cares for needy children by empowering their caregivers to do their best work, with compassion, grace, integrity and excellence. Our end goal is to support children worldwide and see every child reach the potential that God has for them.
+                        </p>
+                        <div className="side_btn">
+                            <a href="/donate">JOIN US TODAY</a>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
-
             {/* -----------------------------------OUR MISSION AND VISION--------------------------------- */}
 
 
             <div className="mission-vision center">
                 <div className="mission">
                     <div className="mission-1">
-                        <h1>Our Mission</h1>
+                        <h1>Mission</h1>
                         <p>Our mission is to alleviate suffering
                             and promote sustainable development
-                            by providing essential 
+                            by providing essential
                             services, advocating for social justice
                             and empowering communities to create
                             lasting change. Grounded in compassion
@@ -60,16 +63,16 @@ const Home = () => {
                             with dignity and equality.</p>
                     </div>
                     <div className="mission-2">
-                        <img src="./images/mission.jpg" height={400} alt="mission" style={{marginLeft:"0.5rem"}} />
+                        <img src="./images/mission.jpg" height={400} alt="mission" style={{ marginLeft: "2rem" , borderRadius:"8px" }} />
                     </div>
                 </div>
                 <div className="vision">
                     <div className="vision-1">
-                        <img src="./images/vision.jpg" alt="vision" height={400} style={{marginRight:"0.5rem"}} />
+                        <img src="./images/vision.jpg" alt="vision" height={400} style={{ marginRight: "2rem" , borderRadius:"8px" }} />
 
                     </div>
                     <div className="vision-2">
-                        <h1>Our Vision</h1>
+                        <h1>Vision</h1>
                         <p>Our vision is a world where every
                             person, regardless of circumstance
                             has access to the resources,
@@ -88,35 +91,38 @@ const Home = () => {
 
 
             {/* --------------------------------HOW WE HELP------------------------------ */}
-            <div className="product center">
+            <div className="r-3 center">
                 <div className="top">
                     <h1>HOW WE HELP</h1>
                 </div>
-                <div className="product_container">
+                <div className="product">
 
-                    <CardProp
-                        data={"images/paise.png"}
-                        title={"Money"}
-                        text={"We supply needy childen with basic necessities like pure food."}
-                    />
+                    <div className="product_container">
 
-                    <CardProp
-                        data={"images/books.png"}
-                        title={"Books"}
-                        text={"We provide education facilities to children all over the world."}
-                    />
-                    <CardProp
-                        data={"images/clothes.png"}
-                        title={"Clothes"}
-                        text={"We supply needy childen with basic necessities."}
-                    />
+                        <CardProp
+                            data={"images/paise.png"}
+                            title={"Money"}
+                            text={"We supply needy childen with basic necessities like pure food."}
+                        />
 
-                    <CardProp
-                        data={"images/shoes.png"}
-                        title={"Shoes"}
-                        text={"We provide facilities to children all over the world."}
-                    />
+                        <CardProp
+                            data={"images/books.png"}
+                            title={"Books"}
+                            text={"We provide education facilities to children all over the world."}
+                        />
+                        <CardProp
+                            data={"images/clothes.png"}
+                            title={"Clothes"}
+                            text={"We supply needy childen with basic necessities."}
+                        />
 
+                        <CardProp
+                            data={"images/shoes.png"}
+                            title={"Shoes"}
+                            text={"We provide facilities to children all over the world."}
+                        />
+
+                    </div>
                 </div>
             </div>
             <hr />

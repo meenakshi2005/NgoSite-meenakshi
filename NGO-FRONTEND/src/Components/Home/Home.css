@@ -14,6 +14,8 @@
     height: 50rem;
     /* padding: 1rem 0; */
     margin: 1rem auto; 
+    border-radius: 8px;
+    box-shadow:0 0 20px 0 black;   
     
 }
 
@@ -74,6 +76,10 @@
 
 /* JOINING AND HELPING */
 
+.r-2{
+    box-shadow:0 0 20px 0 black;
+    border-radius: 8px;
+} 
 
 .side {
     background-color: rgba(0, 0, 0, 0.966);
@@ -81,7 +87,9 @@
     text-align: center;
     color: white;
     font-family: 'Trebuchet MS', sans-serif;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; 
+    border-radius: 8px;
+
 }
 
 .side .left {
@@ -93,6 +101,7 @@
     float: left;
     width: 100%;
     border: 2rem solid black;
+    border-radius: 8px;
 }
 
 .side .right {
@@ -100,6 +109,7 @@
     width: 50%;
     height: 30rem;
     float: right;
+    border-radius: 8px;
 }
 
 .side .right h2 {
@@ -144,6 +154,18 @@
 
 .mission-vision{
     margin-bottom: 1rem;
+    /* border: 2px solid black; */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow:0 0 20px 0 black;
+}
+
+h1{
+    font-weight: bold;
+}
+
+.vision{
+    margin-top: 3rem;
 }
 
 .mission,
@@ -161,15 +183,23 @@
     p {
         color: gray;
         font-size: 25px;
+        margin: 0 2rem;
     }
 
     h1 {
         text-align: center;
+        
     }
 }
 
 
+
 /* Product Container & item props css*/
+.r-3{
+ box-shadow: 0 0 20px 0 black;
+ border-radius: 8px;
+ padding: 1rem;
+}
 .product {
     background-image: url("/public/images/poor.jpg");
     background-size: 100%;
@@ -185,12 +215,10 @@
 }
 
 .top {
-    font-family: 'Courier New', Courier, monospace;
-    margin-top: 2rem;
+    margin: 1rem 0;
     font-size: 1rem;
     padding: 0 1rem;
-    border: 10px double black;
-
+    text-align: center;
 }
 
 .product_container {

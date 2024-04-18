@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../Header/Button'
 import "./Footer.css"
 import LinkProp from './LinkProps'
 import { Link } from 'react-router-dom'
