@@ -1,24 +1,46 @@
 import React from 'react';
-// import "../assets/css/bootstrap.min.css";
-// import "../assets/css/style.css";
-// import "../assets/css/all.min.css";
+import "../../assets/css/bootstrap.min.css";
+import "../../assets/css/style.css";
+import "../../assets/css/all.min.css";
+import Header from '../Header/Header'
 
 function Blog() {
   return (
-    <div className='events'>
-      <div className="page-nav no-margin row">
-        <div className="container">
-          <div className="row">
-            <h2>Our Blog</h2>
+    <>
+    <Header />
+    {/* <div className='events'> */}
+     <div
+        className="page-nav no-margin row"
+        style={{
+          padding:"10px",
+          padding:"20px"
+          }}
+      >
+        <div className="container"  
+         style={{
+          display:"flex",
+          flexDirection:'column',
+        alignItems:'center',
+        justifyContent:"center"
+          }}>
+          {/* <div className="row"> */}
+            <h2>Popular Causes</h2>
             <ul>
-              <li><a href="#"><i className="fas fa-home"></i> Home</a></li>
-              <li><i className="fas fa-angle-double-right"></i> Blog</li>
+              <li>
+                <a href="#">
+                  <i className="fas fa-home"></i> Home
+                </a>
+              </li>
+              <li>
+                <i className="fas fa-angle-double-right"></i> About Us
+              </li>
             </ul>
-          </div>
+          {/* </div> */}
         </div>
       </div>
 
       {/* Our Blog Section */}
+      
       <section className="our-blog">
         <div className="container">
           <div className="blog-row row">
@@ -119,7 +141,8 @@ function Blog() {
         </div>
       </section>
       {/* End Our Blog Section */}
-    </div>
+    {/* </div> */}
+    </>
   );
 }
 
