@@ -3,8 +3,8 @@ import "../../assets/css/bootstrap.min.css";
 import "../../assets/css/style.css";
 import "../../assets/css/all.min.css";
 import "../../assets/css/animate.css";
-import"../../assets/plugins/slider/css/owl.theme.default.css";
-import "../../assets/plugins/slider/css/owl.carousel.min.css";
+// import"../../assets/plugins/slider/css/owl.theme.default.css";
+// import "../../assets/plugins/slider/css/owl.carousel.min.css";
 import Header from '../Header/Header'
 
 const Contact = () => {
